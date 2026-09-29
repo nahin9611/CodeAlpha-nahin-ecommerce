@@ -10,7 +10,7 @@ const ProductListScreen = () => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/products');
+      const { data } = await axios.get('https://codealpha-nahin-ecommerce.onrender.com/api/products');
       setProducts(data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -29,7 +29,7 @@ const ProductListScreen = () => {
     try {
       const config = { headers: { Authorization: `Bearer ${userInfo.token}` } };
       // Creates a dummy product in the backend
-      const { data } = await axios.post('http://localhost:5000/api/products', {}, config);
+      const { data } = await axios.post('https://codealpha-nahin-ecommerce.onrender.com/api/products', {}, config);
       // Immediately redirect to the edit screen for that new product
       navigate(`/admin/product/${data._id}/edit`);
     } catch (error) {
@@ -41,7 +41,7 @@ const ProductListScreen = () => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
         const config = { headers: { Authorization: `Bearer ${userInfo.token}` } };
-        await axios.delete(`http://localhost:5000/api/products/${id}`, config);
+        await axios.delete(`https://codealpha-nahin-ecommerce.onrender.com/api/products/${id}`, config);
         // Refresh the list after deletion
         fetchProducts(); 
       } catch (error) {

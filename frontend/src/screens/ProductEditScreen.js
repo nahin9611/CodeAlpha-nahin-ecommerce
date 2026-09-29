@@ -19,7 +19,7 @@ const ProductEditScreen = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/products/${productId}`);
+        const { data } = await axios.get(`https://codealpha-nahin-ecommerce.onrender.com/api/products/${productId}`);
         setName(data.name);
         setPrice(data.price);
         setImageUrl(data.imageUrl);
@@ -44,7 +44,7 @@ const ProductEditScreen = () => {
       };
 
       await axios.put(
-        `http://localhost:5000/api/products/${productId}`,
+        `https://codealpha-nahin-ecommerce.onrender.com/api/products/${productId}`,
         { name, price, imageUrl, category, countInStock, description },
         config
       );

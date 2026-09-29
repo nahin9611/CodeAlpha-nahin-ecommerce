@@ -18,8 +18,8 @@ const ProfileScreen = () => {
         };
 
         // Fetch user details and their specific orders simultaneously
-        const { data: profileData } = await axios.get('http://localhost:5000/api/users/profile', config);
-        const { data: orderData } = await axios.get('http://localhost:5000/api/orders/myorders', config);
+        const { data: profileData } = await axios.get('https://codealpha-nahin-ecommerce.onrender.com/api/users/profile', config);
+        const { data: orderData } = await axios.get('https://codealpha-nahin-ecommerce.onrender.com/api/orders/myorders', config);
 
         setUserProfile(profileData);
         setOrders(orderData);

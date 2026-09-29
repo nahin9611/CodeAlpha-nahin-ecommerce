@@ -11,8 +11,8 @@ const HomeScreen = () => {
       try {
         // If a keyword exists, append it to the API URL
         const url = keyword 
-          ? `http://localhost:5000/api/products?keyword=${keyword}`
-          : 'http://localhost:5000/api/products';
+          ? `https://codealpha-nahin-ecommerce.onrender.com/api/products?keyword=${keyword}`
+          : 'https://codealpha-nahin-ecommerce.onrender.com/api/products';
           
         const { data } = await axios.get(url);
         setProducts(data);

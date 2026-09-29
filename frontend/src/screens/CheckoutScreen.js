@@ -34,7 +34,7 @@ const CheckoutScreen = () => {
       };
 
       await axios.post(
-        'http://localhost:5000/api/orders',
+        'https://codealpha-nahin-ecommerce.onrender.com/api/orders',
         {
           orderItems: cartItems,
           totalPrice: getCartSubTotal(),

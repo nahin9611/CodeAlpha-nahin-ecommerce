@@ -17,7 +17,7 @@ const OrderListScreen = () => {
           const config = {
             headers: { Authorization: `Bearer ${userInfo.token}` },
           };
-          const { data } = await axios.get('http://localhost:5000/api/orders', config);
+          const { data } = await axios.get('https://codealpha-nahin-ecommerce.onrender.com/api/orders', config);
           setOrders(data);
         } catch (err) {
           setError('Failed to fetch system orders.');

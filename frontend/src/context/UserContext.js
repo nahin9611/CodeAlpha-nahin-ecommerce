@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const { data } = await axios.post('http://localhost:5000/api/users/login', { email, password });
+      const { data } = await axios.post('https://codealpha-nahin-ecommerce.onrender.com/api/users/login', { email, password });
       setUserInfo(data);
       localStorage.setItem('userInfo', JSON.stringify(data));
       return { success: true };
@@ -21,7 +21,7 @@ export const UserProvider = ({ children }) => {
 
   const register = async (name, email, password) => {
     try {
-      const { data } = await axios.post('http://localhost:5000/api/users/register', { name, email, password });
+      const { data } = await axios.post('https://codealpha-nahin-ecommerce.onrender.com/api/users/register', { name, email, password });
       setUserInfo(data);
       localStorage.setItem('userInfo', JSON.stringify(data));
       return { success: true };
