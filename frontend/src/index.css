@@ -11,3 +11,72 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* =========================================
+   UNIVERSAL MOBILE RESPONSIVENESS FIX
+   ========================================= */
+
+/* 1. Prevent any element from stretching past the screen width */
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* 2. Force Header and Footer backgrounds to stretch full width */
+header, footer {
+  width: 100vw !important;
+  max-width: 100%;
+  margin: 0 !important;
+}
+
+/* 3. Make header content stack neatly on small screens */
+@media screen and (max-width: 768px) {
+  /* Target the main navigation container */
+  header nav, .navbar, header > div {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 10px !important;
+  }
+
+  /* Prevent Logo text from wrapping awkwardly */
+  header h1, .navbar-brand {
+    font-size: 1.3rem !important;
+    white-space: nowrap !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Shrink the search bar container to fit the screen */
+  header form, .search-bar {
+    width: 100% !important;
+    max-width: 350px !important;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px !important;
+  }
+
+  /* Adjust the actual text input field */
+  header form input {
+    width: 100% !important;
+  }
+
+  /* Keep Cart and Sign In buttons together in the center */
+  header ul, .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 15px !important;
+    padding: 0 !important;
+  }
+}
