@@ -800,3 +800,61 @@ a {
 .btn-edit:hover {
   background: #d97706;
 }
+
+/* =========================================
+   THE "NUCLEAR" MOBILE OVERRIDE
+   ========================================= */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+}
+
+@media screen and (max-width: 768px) {
+  .app-container {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  
+  /* Force the header to stack vertically */
+  .app-container .navbar {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: auto !important;
+    padding: 20px 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .app-container .nav-brand {
+    text-align: center !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* Target the SearchBox form */
+  .app-container .navbar form {
+    width: 90% !important;
+    max-width: 400px !important;
+    margin-bottom: 15px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* Stack Cart and Profile vertically so they cannot break the screen width */
+  .app-container .nav-links {
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: center !important;
+    width: 100% !important;
+    gap: 15px !important;
+  }
+
+  /* Stack the inner Profile/Logout links */
+  .app-container .nav-links div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+  }
+}
